@@ -13,7 +13,7 @@
       <button @click="nextRandomCountry" class="round-button cancel">
         <close-circle-icon />
       </button>
-      <button class="round-button check">
+      <button @click="goToCountry" class="round-button check">
         <check-bold-icon />
       </button>
     </div>
@@ -57,6 +57,10 @@ export default class Map extends Vue {
       Math.floor(Math.random() * this.countries.length)
     ];
     this.mapExpanded = false;
+  }
+
+  goToCountry() {
+    window.open("https://en.wikipedia.org/wiki/" + this.country.name, "_blank");   
   }
 
   mounted() {
