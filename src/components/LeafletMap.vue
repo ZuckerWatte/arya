@@ -42,13 +42,13 @@ export default class LeafletMap extends Vue {
 .leaflet-map {
   height: 100%;
   width: 100%;
-  bottom: 10%;
+  bottom: 0;
   position: relative;
   transition: bottom 1s ease;
 }
 
 button {
-  height: 10%;
+  height: 15%;
   background-color:#2292ee;
   color: #fff;
   font-size: 1.2rem;

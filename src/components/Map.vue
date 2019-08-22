@@ -118,7 +118,7 @@ button {
   );
   border-radius: 15px;
   box-shadow: 0 30px 30px 0 rgba(0, 0, 0, 0.05);
-  padding-bottom: 6%;
+  padding-bottom: 10vh;
 }
 
 .country-content > p {
@@ -131,7 +131,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 90%;
 }
 
 .country-content > .flag > img {
