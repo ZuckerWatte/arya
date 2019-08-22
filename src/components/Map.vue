@@ -103,7 +103,7 @@ button {
 }
 
 .country-content {
-  height: 65%;
+  height: 65vh;
   width: 85%;
   margin: 0 auto;
   overflow: hidden;
@@ -139,7 +139,7 @@ button {
 .navigation {
   display: block;
   height: 35%;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .round-button {
