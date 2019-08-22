@@ -9,7 +9,6 @@ import { Component, Vue } from 'vue-property-decorator';
 import Map from './components/Map.vue';
 
 import {LMap, LTileLayer, LMarker} from 'vue2-leaflet'
-import { Icon } from 'leaflet'
 
 import checkBoldIcon from "vue-material-design-icons/CheckBold.vue"
 import closeCircleIcon from "vue-material-design-icons/CloseCircle.vue"
@@ -21,12 +20,18 @@ Vue.component("l-map", LMap)
 Vue.component("l-tile-layer", LTileLayer)
 Vue.component("l-marker", LMarker)
 
+import { Icon } from 'leaflet'
+import 'leaflet/dist/leaflet.css'
 
+delete Icon.Default.prototype._getIconUrl;
+
+Icon.Default.imagePath = '.';
 Icon.Default.mergeOptions({
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
   shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
+
 
 @Component({
   components: {

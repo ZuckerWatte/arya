@@ -77,8 +77,10 @@ export default class Map extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+h1 {
+  font-size: 1.7rem;
+  font-weight: 200;
+  margin: 2rem 0;
 }
 ul {
   list-style-type: none;
@@ -105,13 +107,27 @@ button {
   width: 85%;
   margin: 0 auto;
   overflow: hidden;
+  background-image: linear-gradient(
+    -180deg,
+    #f1f8ff 2%,
+    #dbe9f5 25%
+  );
+  border-radius: 15px;
+  box-shadow: 0 30px 30px 0 rgba(0, 0, 0, 0.05);
+  padding-bottom: 6%;
+}
+
+.country-content > p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 1rem 0;
 }
 
 .country-content > .flag {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 90%;
 }
 
 .country-content > .flag > img {
