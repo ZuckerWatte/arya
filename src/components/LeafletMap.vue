@@ -42,7 +42,7 @@ export default class LeafletMap extends Vue {
 .leaflet-map {
   height: 100%;
   width: 100%;
-  bottom: 0%;
+  bottom: 10%;
   position: relative;
   transition: bottom 1s ease;
 }

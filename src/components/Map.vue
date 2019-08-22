@@ -107,7 +107,7 @@ button {
 }
 
 .country-content {
-  height: 65vh;
+  height: 60vh;
   width: 85%;
   margin: 0 auto;
   overflow: hidden;
@@ -131,7 +131,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90%;
+  height: 100%;
 }
 
 .country-content > .flag > img {
@@ -142,7 +142,7 @@ button {
 
 .navigation {
   display: block;
-  height: 35%;
+  height: 40vh;
   margin-top: 2rem;
 }
 
