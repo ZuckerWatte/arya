@@ -2,7 +2,7 @@
   <div class="leaflet-map" :class="{ active: mapExpanded }">
     <button @click="toggleMap" class="long-button">Map</button>
     <div class="map-layer">
-      <l-map :zoom="zoom" :center="center" :options="{scrollWheelZoom:false, zoomControl:false}">
+      <l-map style="min-height: 650px; min-width: 800px" :zoom="zoom" :center="center" :options="{scrollWheelZoom:false, zoomControl:false}">
         <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
         <l-marker :lat-lng="center" :icon="defaultIcon"></l-marker>
       </l-map>
