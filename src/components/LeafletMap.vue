@@ -32,6 +32,7 @@ export default class LeafletMap extends Vue {
 
   @Emit('toggleMap')
   toggleMap() {
+    console.log("Test");
     return !this.mapExpanded;
   }
 }

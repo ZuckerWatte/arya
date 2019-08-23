@@ -1,5 +1,5 @@
 <template>
-  <div class="country-card" :class="{animate: nextCard}">
+  <div class="country-card" :class="{animate: isAnimated}">
     <div class="country-content">
       <p>{{country.name}}</p>
       <div class="flag">
@@ -28,12 +28,18 @@ export default class CountryCard extends Vue {
   @Prop() private country!: any;
   @Prop() private next!: boolean;
 
+  animated: boolean = false;
   private zoom: number = 5;
 
   public mapExpanded: boolean = false;
 
-  get nextCard() {
-    return this.next;
+  get isAnimated() {
+    return this.animated;
+  }
+
+  @Watch("next")
+  onChangeNext() {
+    this.animated = this.next;
   }
 
   get countryLatLng() {
@@ -56,7 +62,7 @@ h1 {
 }
 
 .country-card.animate {
-  transition: transform 0.5s;
+  transition: transform 0.45s;
   transform: translateX(-60rem) rotate(-45deg) !important;
   // transition: opacity 0.5s;
   // opacity: 0 !important;

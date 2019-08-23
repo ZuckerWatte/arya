@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 import CardStack from "./components/CardStack.vue";
 import Navigation from "./components/Navigation.vue";
 
@@ -38,15 +38,21 @@ export default class App extends Vue {
   public loading: boolean = false;
   public next: boolean = false;
   countries: [] = [];
+  selectedCountries: {}[] = [];
   cards: number[] = [];
 
   get currentCountry() {
-      return this.countries[this.cards[0]];
+    return this.countries[this.cards[0]];
   }
 
   get countriesFromCards() {
-    let cards = this.cards.map(card => this.countries[card]);
-    return cards;
+    return this.selectedCountries;
+    // return this.cards.map(card => this.countries[card]);
+  }
+
+  @Watch('cards')
+  onChangeCards() {
+    this.selectedCountries = this.cards.map(card => this.countries[card]);
   }
 
   get nextCard() {
@@ -69,9 +75,10 @@ export default class App extends Vue {
   nextCountry() {
     this.next = true;
     this.addNewRandomCountry();
-    if (this.cards.length > 3) {
-      this.cards.shift();
-    }
+    setTimeout(() => {
+      this.next = false;
+      this.cards = this.cards.splice(1, 3);
+    }, 500);
   }
 
   addNewRandomCountry() {
@@ -82,12 +89,14 @@ export default class App extends Vue {
     this.loading = true;
     axios
       .get("https://restcountries.eu/rest/v2/all")
-      .then(
-        response => {
-          this.countries = response.data.map((country: any) => country),
-          this.cards = this.randomCountries(3)})
+      .then(response => {
+        (this.countries = response.data.map((country: any) => country)),
+          (this.cards = this.randomCountries(3));
+      })
       .catch(error => console.log(error))
-      .finally(() => {(this.loading = false)});
+      .finally(() => {
+        this.loading = false;
+      });
   }
 }
 </script>
