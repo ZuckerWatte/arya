@@ -27,7 +27,7 @@ export default class Navigation extends Vue {
 
 @Emit('toggleMap')
   toggleMap() {
-    return !this.mapExpanded;
+    // return !this.mapExpanded;
   }
 
   goToCountry() {
