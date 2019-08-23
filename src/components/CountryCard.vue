@@ -81,7 +81,7 @@ $defaultScale: 1 - ($cardsScaleOffset * $cardsTotal);
   border-radius: 15px;
   box-shadow: 0 20px 10px 0 rgba(0, 0, 0, 0.1);
   position: absolute;
-  width: 60vw;
+  width: 85vw;
   display: flex;
   align-items: center;
   justify-content: center;
