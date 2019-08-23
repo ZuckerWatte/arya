@@ -32,7 +32,6 @@ export default class LeafletMap extends Vue {
 
   @Emit('toggleMap')
   toggleMap() {
-    console.log("Test");
     return !this.mapExpanded;
   }
 }
@@ -42,8 +41,7 @@ export default class LeafletMap extends Vue {
 <style scoped>
 .leaflet-map {
   height: 100%;
-  width: 100%;
-  bottom: 0;
+  bottom: 10%;
   position: relative;
   transition: bottom 1s ease;
 }
@@ -58,11 +56,12 @@ button {
 }
 
 .map-layer {
-  height: 60%;
+  height: 80%;
+  width: 100%;
 }
 
 .active {
-  bottom: 60%;
+  bottom: 80%;
   transition: bottom 0.75s ease;
 }
 </style>

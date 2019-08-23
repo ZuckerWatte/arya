@@ -116,17 +116,23 @@ $defaultScale: 1 - ($cardsScaleOffset * $cardsTotal);
   }
 }
 
+.country-content {
+  height: 100%;
+  position: relative;
+}
+
 .country-content > p {
   font-size: 1.3rem;
   font-weight: 600;
   margin: 1rem 0;
+  height: 10%;
 }
 
 .country-content > .flag {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90%;
+  height: 80%;
 }
 
 .country-content > .flag > img {
