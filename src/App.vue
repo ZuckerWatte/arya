@@ -46,14 +46,8 @@ export default class App extends Vue {
   }
 
   get countriesFromCards() {
-    return this.selectedCountries;
-    // return this.cards.map(card => this.countries[card]);
-  }
-
-  @Watch('cards')
-  onChangeCards() {
-    this.selectedCountries = this.cards.map(card => this.countries[card]);
-  }
+    return this.cards.map(card => this.countries[card]);
+    }
 
   get nextCard() {
     return this.next;
@@ -69,16 +63,17 @@ export default class App extends Vue {
       taken.splice(randomIndex, 1);
       n--;
     }
+
     return result;
   }
 
   nextCountry() {
     this.next = true;
-    this.addNewRandomCountry();
     setTimeout(() => {
       this.next = false;
+      this.addNewRandomCountry();
       this.cards = this.cards.splice(1, 3);
-    }, 500);
+    }, 400);
   }
 
   addNewRandomCountry() {

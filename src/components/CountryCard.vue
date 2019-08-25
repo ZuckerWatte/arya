@@ -1,5 +1,5 @@
 <template>
-  <div class="country-card" :class="{animate: isAnimated}">
+  <div class="country-card" :class="{animate :nextX}">
     <div class="country-content">
       <p>{{country.name}}</p>
       <div class="flag">
@@ -26,21 +26,11 @@ import LeafletMap from "../components/LeafletMap.vue";
 })
 export default class CountryCard extends Vue {
   @Prop() private country!: any;
-  @Prop() private next!: boolean;
+  @Prop() private nextX!: boolean;
+  @Prop() private indexN!: number;
 
-  animated: boolean = false;
   private zoom: number = 5;
-
   public mapExpanded: boolean = false;
-
-  get isAnimated() {
-    return this.animated;
-  }
-
-  @Watch("next")
-  onChangeNext() {
-    this.animated = this.next;
-  }
 
   get countryLatLng() {
     return this.country.latlng;
@@ -62,7 +52,7 @@ h1 {
 }
 
 .country-card.animate {
-  transition: transform 0.45s;
+  transition: transform 0.55s;
   transform: translateX(-60rem) rotate(-45deg) !important;
   // transition: opacity 0.5s;
   // opacity: 0 !important;
